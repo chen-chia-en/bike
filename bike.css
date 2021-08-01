@@ -1,0 +1,440 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root{
+    --title-fontfamily: 'Kanit', sans-serif;;
+    --p-fontfamily:'Source Sans Pro', sans-serif ;
+}
+
+body{
+    width:100vw;
+    height:100vh;
+    margin:0;
+    padding:0;
+    background:#191c1f;
+    overflow-x: hidden;
+    
+}
+.section2{
+    width:100vw;
+    height:100vh;
+}
+#backtext{
+position:absolute;
+font-size: 150px;
+font-family: 'Exo', sans-serif;
+color: rgb(46, 45, 45);
+right:-10%;
+top:50%;
+transform: translateY(-50%) rotate(90deg);
+
+}
+.logo{
+    position:absolute;
+    margin: 30px;
+}
+nav ul{
+    position: absolute;
+    width:100%;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    margin: 18px 0;
+    list-style: none;
+    font-size:22px;
+    z-index: 999;
+    
+}
+
+nav ul li{
+    font-family: var(--p-fontfamily);
+    margin:15px;
+    color: rgb(146, 139, 139);
+    transition:color  0.5s ease;
+    cursor: pointer;
+    z-index: 999;
+}
+
+nav ul li.show{
+    color: white;
+}
+
+.icon{
+    position: absolute;
+    right:0;
+    display: flex;
+    margin:30px;
+    z-index: 999;
+}
+.icon i{
+    font-size: 22px;
+    margin:10px;
+    color: white;
+    cursor: pointer;
+}
+
+.slide{
+    position:absolute;
+    width:100vw;
+    height:100vh;
+    opacity:0;
+  
+    
+}
+.slide.show{
+    opacity:1;
+}
+
+.bike{
+    position:absolute;
+    right:70px;
+    bottom:40px;
+    pointer-events: none;
+}
+.bike img{
+    width:650px;
+    z-index:999;
+    transform-origin: bottom;
+    transform: rotate(-70deg) ;
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 1s cubic-bezier(.17,0.83,.33,1.5);
+    pointer-events: none;
+}
+.show .bike img {
+    opacity: 1;
+    transform: rotate(0deg);
+  
+}
+
+
+.title{
+    color:transparent;
+    font-size: 75px;
+    position: absolute;
+    left:30px;
+    top:100px;
+    width:1000px;
+    height:200px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    -webkit-text-stroke-width: 2px;
+    pointer-events: none;
+}
+#title1{
+    -webkit-text-stroke-color: #e53746
+    ;
+}
+#title2{
+    -webkit-text-stroke-color: #f1f172
+    ;
+}
+#title3{
+    -webkit-text-stroke-color: #01a9b1
+    ;
+}
+.title h1{
+    font-family: var(--title-fontfamily);
+    transform: translateY(-100%);
+}
+
+.show .title h1{
+    animation: comedown 0.5s forwards 0.5s;
+}
+@keyframes comedown{
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+.paragrath{
+    position: absolute;
+    color:white;
+    display: flex;
+    width:420px;
+    height:120px;
+    top:50%;
+    left:30px;
+   
+    font-size: 18px;
+    font-family: var(--p-fontfamily);
+    overflow: hidden;
+}
+.paragrath p{
+    transform: translateX(-100%);
+   
+}
+.show .paragrath p{
+    animation: comein .5s forwards 1s;
+}
+@keyframes comein{
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+button{
+    position: absolute;
+    width:150px;
+    height:50px;
+    top:72%;
+    left:30px;
+    border-radius: 100px;
+    border:transparent;
+    font-size: 22px;
+    font-family: var(--title-fontfamily);
+    color: white;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 999;
+}
+.show button{
+    animation: button 1s forwards 1s;
+    cursor: pointer;
+    z-index: 999;
+}
+#btn1{
+    background-color: #e53746;
+    cursor: pointer;
+    z-index: 999;
+}
+#btn2{
+    background-color: #ffff09;
+    cursor: pointer;
+   color:black;
+   z-index: 999;
+}
+#btn3{
+    background-color:  #01a9b1;
+    cursor: pointer;
+    z-index: 999;
+}
+@keyframes button{
+    100%{
+        opacity: 1;
+    }
+}
+
+.swap{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width:200px;
+    height:50px;
+    font-size: 25px;
+    color: #495057;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+   z-index: 999;
+}
+.next, .prev{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 30px;
+    z-index: 999;
+}
+
+.prev:hover{
+    color:white;
+    transition: .5s ease;
+}
+.next:hover{
+    color:white;
+    transition: .5s ease;
+}
+.next{
+    right:0;
+}
+.prev{
+    left:0px;
+}
+.number{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.number h3{
+    margin: 5px;
+    transition: .5s ease;
+}
+.number h3:hover{
+    color:white;
+    ;
+}
+
+h3.show {
+    color:white;
+}
+
+/* section3 */
+.section3{
+    position: absolute;
+    width:100vw;
+    height: 80vh;
+    display: flex;
+    top:100vh;
+    margin-top: 50px;
+  
+}
+.category{
+    width: 100vw;
+    height:80px;
+    display: flex;
+  
+    font-size: 25px;
+    font-family: var(--title-fontfamily);
+    justify-content: center;
+    text-transform: uppercase;
+}
+.category h1{
+    position: absolute;
+    color:rgb(45, 45, 45);
+    left:23%;
+    top:-35px;
+
+}
+.category h2{
+    font-size:35px;
+    color:white;
+    z-index:1;
+    letter-spacing: 5px;
+}
+/* grid */
+.grid{
+    width:100%;
+    height:100%;
+    top:10%;
+    left:0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+.gird1,.grid2,.grid3{
+    width:300px;
+    height:380px;
+    position: relative;
+    margin: 20px;
+    z-index: 999;
+   overflow: hidden;
+
+   cursor: pointer;
+}
+
+.grid img{
+    width:100%;
+    height:100%;
+    position: relative;
+   object-fit: cover;
+   transition: 1s ease;
+}
+.section3 img:hover {
+transform: scale(1.15);
+}
+#scene1{
+    object-position: center;
+}
+#scene2{
+    object-position:bottom;
+    transform: scale(0.5);
+}
+#scene3{
+    object-position: top;
+    transform: scale(1.1);
+}
+#type{
+    position: absolute;
+    bottom:10px;
+    left:20px;
+    color: white;
+    font-family: var(--p-fontfamily);
+    text-transform: uppercase;
+    font-size: 25px;
+    
+}
+
+/* section4 */
+.section4{
+    position: absolute;
+    width:100vw;
+    height: 90vh;
+    display: flex;
+    top:200vh;
+   
+}
+.section4 .information{
+    width:100vw;
+    height:400px;
+    background: linear-gradient(#db150e
+    , #f15717,#F19817    );
+    position: absolute;
+    z-index: -1;
+    top:20px;
+   
+}
+
+.information h2{
+    position: absolute;
+    right:100px;
+    font-size: 35px;
+    text-transform: uppercase;
+    font-family: 'Exo', sans-serif;
+    color:black;
+    top:10px;
+    opacity:1;
+    cursor: pointer;
+}
+.name{
+    position: absolute;
+    
+    right:100px;
+    font-size: 150px;
+    font-family: var(--title-fontfamily);
+    -webkit-text-stroke: 2px white;
+    color:transparent;
+
+}
+
+.bestseller-inner-bike{
+    position: absolute;
+    width:680px;
+    top:120px;
+    left:50px;
+    transform: rotate(-8deg)
+}
+.price{
+    position: absolute;
+    right:100px;
+    top:50%;
+    font-size: 50px;
+    font-family: var(--title-fontfamily);
+    color: white;
+}
+#buy{
+    z-index: 10000;
+    width:150px;
+    height:50px;
+    position: absolute;
+    right:100px;
+    top: 280px;
+    background-color: black;
+    font-size: 25px;
+    color:white;
+    font-family: var(--title-fontfamily);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+
+    cursor: pointer;
+}
